@@ -15,7 +15,7 @@ const AboutHome = () => {
                 />
 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-[#0b1e3d]/70" />
+                <div className="absolute inset-0 bg-[#101828]/80" />
 
                 {/* Content */}
                 <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6 text-white">
@@ -23,7 +23,7 @@ const AboutHome = () => {
                         About Sai College for Women
                     </h1>
 
-                    <p className="max-w-2xl text-blue-200 text-lg md:text-xl">
+                    <p className="max-w-2xl text-[#EAB308] text-lg md:text-xl font-medium">
                         Empowering women through quality education, leadership development,
                         and values-driven academic excellence.
                     </p>
@@ -53,7 +53,7 @@ const AboutHome = () => {
 
             {/* Overview */}
             <section className="text-center max-w-4xl mx-auto">
-                <h2 className="text-3xl font-bold mb-6 text-[#0b1e3d]">
+                <h2 className="text-3xl font-bold mb-6 text-[#101828]">
                     Our Journey
                 </h2>
                 <p className="text-gray-600 leading-relaxed">
@@ -76,7 +76,7 @@ const AboutHome = () => {
                     <Link
                         key={item.title}
                         to={item.link}
-                        className="p-6 bg-gray-50 rounded-2xl text-center hover:bg-blue-600 hover:text-white transition font-medium"
+                        className="p-6 bg-white border border-gray-100 rounded-2xl text-center hover:bg-[#101828] hover:text-[#EAB308] transition-all hover:shadow-xl font-bold text-[#101828]"
                     >
                         {item.title}
                     </Link>

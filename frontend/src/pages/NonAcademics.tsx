@@ -4,10 +4,10 @@ const NonAcademics = () => {
     return (
         <div className="flex flex-col">
             {/* Header */}
-            <section className="bg-[#0b1e3d] text-white py-20 px-4">
-                <div className="container mx-auto text-center space-y-4">
-                    <h1 className="text-4xl md:text-5xl font-bold">Life Beyond Books</h1>
-                    <p className="text-xl text-blue-200 max-w-2xl mx-auto">
+            <section className="bg-[#101828] text-white py-24 px-4 overflow-hidden relative">
+                <div className="container mx-auto text-center space-y-6 relative z-10">
+                    <h1 className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight">Life Beyond Books</h1>
+                    <p className="text-xl text-[#EAB308] max-w-2xl mx-auto font-bold uppercase tracking-widest text-sm">
                         Discover a vibrant campus life filled with cultural gems, athletic excellence, and meaningful social service.
                     </p>
                 </div>
@@ -42,10 +42,10 @@ const NonAcademics = () => {
                             </div>
                             <div className="space-y-3">
                                 <div className="flex items-center gap-3">
-                                    <div className="h-10 w-10 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center">
+                                    <div className="h-10 w-10 bg-yellow-50 text-[#EAB308] rounded-xl flex items-center justify-center">
                                         <item.icon className="h-5 w-5" />
                                     </div>
-                                    <h3 className="text-2xl font-bold text-[#0b1e3d]">{item.title}</h3>
+                                    <h3 className="text-2xl font-black text-[#101828]">{item.title}</h3>
                                 </div>
                                 <p className="text-slate-600 leading-relaxed">
                                     {item.desc}
@@ -57,11 +57,11 @@ const NonAcademics = () => {
             </section>
 
             {/* Clubs Grid */}
-            <section className="py-24 bg-slate-50">
+            <section className="py-24 bg-gray-50">
                 <div className="container mx-auto px-4 space-y-16">
                     <div className="text-center space-y-4">
-                        <h2 className="text-3xl font-bold text-[#0b1e3d]">Student-Led Clubs</h2>
-                        <p className="text-slate-500 max-w-2xl mx-auto">Explore your passions and develop leadership skills in our diverse range of special interest groups.</p>
+                        <h2 className="text-3xl lg:text-5xl font-black text-[#101828]">Student-Led Clubs</h2>
+                        <p className="text-slate-500 max-w-2xl mx-auto font-medium">Explore your passions and develop leadership skills in our diverse range of special interest groups.</p>
                     </div>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                         {[
@@ -70,11 +70,11 @@ const NonAcademics = () => {
                             { name: 'Entrepreneurship Cell', icon: Users },
                             { name: 'Literary Society', icon: BookOpen }
                         ].map((club, i) => (
-                            <div key={i} className="bg-white p-8 rounded-2xl border border-slate-100 text-center space-y-4 hover:border-blue-300 transition-all hover:-translate-y-1">
-                                <div className="h-12 w-12 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto">
-                                    <club.icon className="h-6 w-6" />
+                            <div key={i} className="bg-white p-8 rounded-3xl border border-gray-100 text-center space-y-4 hover:border-[#EAB308] hover:shadow-xl transition-all group hover:-translate-y-2">
+                                <div className="h-14 w-14 bg-yellow-50 text-[#EAB308] rounded-2xl flex items-center justify-center mx-auto group-hover:bg-[#101828] group-hover:text-white transition-all">
+                                    <club.icon className="h-7 w-7" />
                                 </div>
-                                <div className="font-bold text-[#0b1e3d]">{club.name}</div>
+                                <div className="font-black text-[#101828] tracking-tight">{club.name}</div>
                             </div>
                         ))}
                     </div>

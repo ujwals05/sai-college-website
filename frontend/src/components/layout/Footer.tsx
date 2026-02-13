@@ -6,15 +6,14 @@ import {
     Linkedin,
     Mail,
     MapPin,
-    Phone,
-    Globe
+    Phone
 } from "lucide-react";
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="bg-[#071a33] text-white pt-20 pb-10">
+        <footer className="bg-[#101828] text-white pt-20 pb-10 border-t border-white/5">
 
             {/* TOP GRID */}
             <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
@@ -22,18 +21,18 @@ const Footer = () => {
                 {/* BRAND */}
                 <div className="space-y-6">
                     <div className="flex items-center gap-4">
-                        <div className="h-16 w-16 bg-white rounded-full flex items-center justify-center p-1 shrink-0 shadow-lg">
-                            <img src="/college_logo_.png" alt="Sai College Logo" className="w-full h-full object-contain" />
+                        <div className="h-16 w-16 bg-white rounded-xl p-1 shadow-lg overflow-hidden">
+                            <img src="/college_logo_.png" alt="SSCW Logo" className="w-full h-full object-contain" />
                         </div>
                         <div>
-                            <h2 className="text-xl font-bold leading-tight">Sai College <br /> for Women</h2>
-                            <p className="text-blue-200 text-xs mt-1 font-semibold tracking-wider uppercase">
-                                Excellence in Education
+                            <h2 className="text-xl font-bold">Sai College for Women</h2>
+                            <p className="text-[#EAB308] text-[11px] mt-1 uppercase tracking-[0.2em] font-black">
+                                Empowering Women Through Education
                             </p>
                         </div>
                     </div>
 
-                    <p className="text-blue-100/70 leading-relaxed text-sm">
+                    <p className="text-white/70 leading-relaxed text-sm">
                         A premier women's institution dedicated to academic excellence,
                         holistic development, and empowering future women leaders.
                     </p>
@@ -44,7 +43,7 @@ const Footer = () => {
                             <Link
                                 key={i}
                                 to="#"
-                                className="h-10 w-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition"
+                                className="h-10 w-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-[#EAB308] hover:text-[#101828] transition-all"
                             >
                                 <Icon className="h-5 w-5" />
                             </Link>
@@ -54,11 +53,11 @@ const Footer = () => {
 
                 {/* QUICK LINKS */}
                 <div>
-                    <h3 className="font-semibold text-lg mb-6">Quick Links</h3>
-                    <ul className="space-y-4 text-blue-100/80">
+                    <h3 className="font-bold text-[#EAB308] uppercase tracking-widest text-xs mb-8">Quick Navigation</h3>
+                    <ul className="space-y-4 text-white/80">
                         {["About Us", "Admissions", "Faculty", "Library", "Campus", "Placements"].map((item) => (
                             <li key={item}>
-                                <Link to="#" className="hover:text-white transition">
+                                <Link to="#" className="hover:text-[#EAB308] transition-colors font-medium">
                                     {item}
                                 </Link>
                             </li>
@@ -68,8 +67,8 @@ const Footer = () => {
 
                 {/* STUDENT RESOURCES */}
                 <div>
-                    <h3 className="font-semibold text-lg mb-6">Student Resources</h3>
-                    <ul className="space-y-4 text-blue-100/80">
+                    <h3 className="font-bold text-[#EAB308] uppercase tracking-widest text-xs mb-8">Student Resources</h3>
+                    <ul className="space-y-4 text-white/80">
                         {[
                             "Anti Ragging",
                             "Alumni",
@@ -79,7 +78,7 @@ const Footer = () => {
                             "Careers"
                         ].map((item) => (
                             <li key={item}>
-                                <Link to="#" className="hover:text-white transition">
+                                <Link to="#" className="hover:text-[#EAB308] transition-colors font-medium">
                                     {item}
                                 </Link>
                             </li>
@@ -89,30 +88,31 @@ const Footer = () => {
 
                 {/* CONTACT */}
                 <div>
-                    <h3 className="font-semibold text-lg mb-6">Contact Us</h3>
-                    <ul className="space-y-4 text-blue-100/80 text-sm">
+                    <h3 className="font-bold text-[#EAB308] uppercase tracking-widest text-xs mb-8">Contact Us</h3>
+                    <ul className="space-y-6 text-white/80 text-sm">
 
-                        <li className="flex gap-3">
-                            <MapPin className="h-5 w-5 text-yellow-400 shrink-0" />
+                        <li className="flex gap-4">
+                            <div className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center shrink-0">
+                                <MapPin className="h-5 w-5 text-[#EAB308]" />
+                            </div>
                             <span>
-                                123 College Road, Education District,
-                                Bangalore, Karnataka - 560001
+                                12, Hennur Main Road,<br />
+                                Bangalore, Karnataka - 560077
                             </span>
                         </li>
 
-                        <li className="flex gap-3">
-                            <Phone className="h-5 w-5 text-yellow-400 shrink-0" />
+                        <li className="flex gap-4">
+                            <div className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center shrink-0">
+                                <Phone className="h-5 w-5 text-[#EAB308]" />
+                            </div>
                             <span>+91 123 456 7890</span>
                         </li>
 
-                        <li className="flex gap-3">
-                            <Mail className="h-5 w-5 text-yellow-400 shrink-0" />
-                            <span>info@college.edu</span>
-                        </li>
-
-                        <li className="flex gap-3">
-                            <Globe className="h-5 w-5 text-yellow-400 shrink-0" />
-                            <span>www.college.edu</span>
+                        <li className="flex gap-4">
+                            <div className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center shrink-0">
+                                <Mail className="h-5 w-5 text-[#EAB308]" />
+                            </div>
+                            <span>info@saicollege.edu.in</span>
                         </li>
                     </ul>
                 </div>
@@ -125,16 +125,16 @@ const Footer = () => {
                         title="College Location"
                         src="https://www.google.com/maps?q=Bangalore&output=embed"
                         width="100%"
-                        height="350"
+                        height="300"
                         loading="lazy"
-                        className="w-full"
+                        className="w-full grayscale invert opacity-80 hover:grayscale-0 hover:invert-0 hover:opacity-100 transition-all duration-700"
                     ></iframe>
                 </div>
             </div>
 
             {/* BOTTOM COPYRIGHT */}
-            <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-white/10 text-center text-blue-200/60 text-sm">
-                © {currentYear} Sai College for Women. All Rights Reserved.
+            <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-white/5 text-center text-white/40 text-[11px] uppercase tracking-widest font-bold">
+                © {currentYear} Sai College for Women. Excellence in Education.
             </div>
 
         </footer>

@@ -5,10 +5,10 @@ const Library = () => {
     return (
         <div className="flex flex-col">
             {/* Header */}
-            <section className="bg-[#0b1e3d] text-white py-20 px-4">
-                <div className="container mx-auto text-center space-y-4">
-                    <h1 className="text-4xl md:text-5xl font-bold">Library & Information Centre</h1>
-                    <p className="text-xl text-blue-200 max-w-2xl mx-auto">
+            <section className="bg-[#101828] text-white py-24 px-4 overflow-hidden relative">
+                <div className="container mx-auto text-center space-y-6 relative z-10">
+                    <h1 className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight">Library & Information Centre</h1>
+                    <p className="text-xl text-[#EAB308] max-w-2xl mx-auto font-bold uppercase tracking-widest text-sm">
                         Your gateway to a world of knowledge. Explore our extensive collection of physical books and digital repositories.
                     </p>
                 </div>
@@ -19,15 +19,15 @@ const Library = () => {
                 <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8">
                     <div className="flex gap-12">
                         <div>
-                            <div className="text-3xl font-bold text-[#0b1e3d]">25,000+</div>
+                            <div className="text-3xl font-black text-[#101828]">25,000+</div>
                             <div className="text-xs font-bold text-slate-500 uppercase tracking-widest">Volumes</div>
                         </div>
                         <div>
-                            <div className="text-3xl font-bold text-[#0b1e3d]">100+</div>
+                            <div className="text-3xl font-black text-[#101828]">100+</div>
                             <div className="text-xs font-bold text-slate-500 uppercase tracking-widest">Journals</div>
                         </div>
                         <div>
-                            <div className="text-3xl font-bold text-[#0b1e3d]">5,000+</div>
+                            <div className="text-3xl font-black text-[#101828]">5,000+</div>
                             <div className="text-xs font-bold text-slate-500 uppercase tracking-widest">E-Books</div>
                         </div>
                     </div>
@@ -36,7 +36,7 @@ const Library = () => {
                         <input
                             type="text"
                             placeholder="Search library catalog..."
-                            className="w-full h-14 pl-12 pr-4 rounded-2xl border-none shadow-sm focus:ring-2 focus:ring-blue-500"
+                            className="w-full h-14 pl-12 pr-4 rounded-2xl border border-gray-100 shadow-sm focus:ring-2 focus:ring-[#EAB308] transition-all"
                         />
                     </div>
                 </div>
@@ -54,11 +54,11 @@ const Library = () => {
                             { title: 'Borrowing Services', desc: 'Seamless automated system for issuing and returning books with student IDs.', icon: ShieldCheck },
                             { title: 'Reading Halls', desc: 'Spacious, well-lit reading halls designed for deep focus and group study sessions.', icon: Library }
                         ].map((item, i) => (
-                            <div key={i} className="p-10 rounded-3xl border border-slate-100 bg-slate-50/50 space-y-6 hover:border-blue-200 transition-colors">
-                                <div className="h-14 w-14 bg-white text-blue-600 rounded-2xl flex items-center justify-center shadow-sm">
+                            <div key={i} className="p-10 rounded-3xl border border-slate-100 bg-white space-y-6 hover:border-[#EAB308] hover:shadow-xl transition-all group">
+                                <div className="h-14 w-14 bg-yellow-50 text-[#EAB308] rounded-2xl flex items-center justify-center shadow-sm group-hover:bg-[#101828] group-hover:text-white transition-all">
                                     <item.icon className="h-7 w-7" />
                                 </div>
-                                <h3 className="text-2xl font-bold text-[#0b1e3d]">{item.title}</h3>
+                                <h3 className="text-2xl font-black text-[#101828]">{item.title}</h3>
                                 <p className="text-slate-600 leading-relaxed">
                                     {item.desc}
                                 </p>
@@ -81,7 +81,7 @@ const Library = () => {
                         </div>
                     </div>
                     <div className="lg:w-1/2 space-y-8">
-                        <h2 className="text-3xl font-bold text-[#0b1e3d]">Library Rules & Ethics</h2>
+                        <h2 className="text-3xl lg:text-5xl font-black text-[#101828]">Library Rules & Ethics</h2>
                         <div className="space-y-4">
                             {[
                                 'Maintain absolute silence inside the library premises.',
@@ -91,7 +91,7 @@ const Library = () => {
                                 'Food and beverages are strictly prohibited.'
                             ].map((rule, i) => (
                                 <div key={i} className="flex gap-4 items-start">
-                                    <div className="h-6 w-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-1">
+                                    <div className="h-6 w-6 rounded-full bg-[#101828] text-[#EAB308] flex items-center justify-center text-[10px] font-black shrink-0 mt-1">
                                         {i + 1}
                                     </div>
                                     <p className="text-slate-700 font-medium">{rule}</p>
@@ -99,7 +99,7 @@ const Library = () => {
                             ))}
                         </div>
                         <div className="pt-4">
-                            <Button className="h-12 px-8 bg-[#0b1e3d] text-white font-bold rounded-xl">
+                            <Button className="h-14 px-10 bg-[#101828] hover:bg-[#EAB308] text-white hover:text-[#101828] font-black rounded-xl shadow-xl transition-all active:scale-95">
                                 DOWNLOAD LIBRARY HANDBOOK
                             </Button>
                         </div>

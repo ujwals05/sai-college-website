@@ -9,6 +9,16 @@ const Navbar = () => {
     const [scrolled, setScrolled] = useState(false)
     const location = useLocation()
 
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 50);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+
     const toggleMenu = () => {
         setIsMenuOpen(prev => !prev)
         if (!isMenuOpen) {
@@ -60,24 +70,23 @@ const Navbar = () => {
                         {/* LOGO BUBBLE */}
                         <Link
                             to="/"
-                            className={`flex items-center gap-3 bg-white/95 backdrop-blur-md rounded-full pl-2 pr-6 py-2 shadow-xl hover:shadow-2xl transition-all border border-white/20 group ${isMenuOpen ? "opacity-0 invisible scale-95" : "opacity-100 visible scale-100"
+                            className={`flex items-center gap-3 bg-white/95 backdrop-blur-md rounded-full px-4 py-2 shadow-xl hover:shadow-2xl transition-all border border-white/20 group ${isMenuOpen ? "opacity-0 invisible scale-95" : "opacity-100 visible scale-100"
                                 }`}
                         >
-                            <div className="h-14 w-14 flex items-center justify-center rounded-full bg-white shadow-sm overflow-hidden border border-gray-100">
+                            <div className="h-10 w-10 sm:h-12 sm:w-12 flex items-center justify-center rounded-full bg-white shadow-sm overflow-hidden border border-gray-100 shrink-0">
                                 <img src="/college_logo_.png" alt="Sai College Logo" className="w-full h-full object-contain p-1" />
                             </div>
 
-                            <div className="hidden sm:block">
-                                <h1 className="text-sm font-black text-[#1b2c47] leading-none">
+                            <div className="flex flex-col">
+                                <h1 className="text-[10px] xs:text-xs sm:text-sm font-black text-[#1b2c47] leading-none">
                                     SAI COLLEGE FOR WOMEN
                                 </h1>
-                                <p className="text-[10px] text-gray-500 font-bold tracking-widest mt-1">
+                                <p className="text-[8px] sm:text-[10px] text-gray-500 font-bold tracking-widest mt-0.5 sm:mt-1">
                                     EXCELLENCE IN EDUCATION
                                 </p>
                             </div>
                         </Link>
 
-                        {/* DESKTOP NAVIGATION */}
                         {/* DESKTOP NAVIGATION */}
                         <nav
                             className={`hidden lg:flex items-center gap-8 transition-all duration-300 ${scrolled
@@ -87,21 +96,21 @@ const Navbar = () => {
                         >
                             <Link
                                 to="/"
-                                className="text-blue-400 font-semibold tracking-wide hover:text-yellow-400 transition-colors"
+                                className="text-blue-500 font-semibold tracking-wide hover:text-yellow-400 transition-colors"
                             >
                                 Home
                             </Link>
 
                             <Link
                                 to="/about"
-                                className="text-blue-400 font-semibold tracking-wide hover:text-yellow-400 transition-colors"
+                                className="text-blue-500 font-semibold tracking-wide hover:text-yellow-400 transition-colors"
                             >
                                 About Us
                             </Link>
 
                             <Link
                                 to="/contact"
-                                className="text-blue-400 font-semibold tracking-wide hover:text-yellow-400 transition-colors duration-300"
+                                className="text-blue-500 font-semibold tracking-wide hover:text-yellow-400 transition-colors duration-300"
                             >
                                 Contact Us
                             </Link>
@@ -109,7 +118,7 @@ const Navbar = () => {
 
                             <Link
                                 to="/admissions"
-                                className="bg-yellow-400 text-[#1b2c47] px-5 py-2 rounded-full font-semibold hover:bg-blue-800 hover:text-white transition-all"
+                                className="bg-yellow-400 text-[#1b2c47] px-5 py-2 rounded-full font-semibold hover:bg-green-600 hover:text-white transition-all"
                             >
                                 Apply Now
                             </Link>
@@ -122,8 +131,8 @@ const Navbar = () => {
                     <button
                         onClick={toggleMenu}
                         className={`relative z-[70] h-14 w-14 flex items-center justify-center rounded-full backdrop-blur-md shadow-xl transition-all duration-500 ${isMenuOpen
-                            ? "bg-[#1b2c47] text-white rotate-180"
-                            : "bg-white/95 text-[#1b2c47] hover:bg-[#1b2c47] hover:text-white"
+                            ? "bg-[#101828] text-white rotate-180"
+                            : "bg-white/95 text-[#101828] hover:bg-[#101828] hover:text-white"
                             }`}
                     >
                         {isMenuOpen ? (
@@ -219,31 +228,39 @@ const Navbar = () => {
                     </nav>
 
                     {/* Sidebar Information Column */}
-                    <div className="hidden lg:flex flex-col justify-center w-96 bg-[#1b2c47] p-12 text-white relative overflow-hidden">
+                    <div className="hidden lg:flex flex-col justify-center w-96 bg-[#101828] p-12 text-white relative overflow-hidden ring-l ring-white/5">
                         <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
 
                         <div className="space-y-12 relative z-10">
                             <div className="space-y-4">
-                                <p className="text-blue-400 font-bold text-xs uppercase tracking-widest">Connect With Us</p>
-                                <div className="space-y-3">
-                                    <a href="tel:+911234567890" className="flex items-center gap-3 text-lg font-bold hover:text-blue-400 transition-colors">
-                                        <Phone className="w-5 h-5 text-blue-400" /> +91 123 456 7890
+                                <p className="text-[#EAB308] font-bold text-xs uppercase tracking-widest">Connect With Us</p>
+                                <div className="space-y-5">
+                                    <a href="tel:+911234567890" className="flex items-center gap-3 text-lg font-bold hover:text-[#EAB308] transition-colors group/link">
+                                        <div className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center group-hover/link:bg-[#EAB308]/20 transition-colors">
+                                            <Phone className="w-5 h-5 text-[#EAB308]" />
+                                        </div>
+                                        +91 123 456 7890
                                     </a>
-                                    <a href="mailto:info@saicollege.edu.in" className="flex items-center gap-3 text-lg font-bold hover:text-blue-400 transition-colors">
-                                        <Mail className="w-5 h-5 text-blue-400" /> info@saicollege.edu.in
+                                    <a href="mailto:info@saicollege.edu.in" className="flex items-center gap-3 text-lg font-bold hover:text-[#EAB308] transition-colors group/link">
+                                        <div className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center group-hover/link:bg-[#EAB308]/20 transition-colors">
+                                            <Mail className="w-5 h-5 text-[#EAB308]" />
+                                        </div>
+                                        info@saicollege.edu.in
                                     </a>
                                     <div className="flex items-start gap-3 text-lg font-bold">
-                                        <MapPin className="w-5 h-5 text-blue-400 shrink-0 mt-1" />
+                                        <div className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center shrink-0">
+                                            <MapPin className="w-5 h-5 text-[#EAB308]" />
+                                        </div>
                                         <span>12, Hennur Main Road,<br />Bangalore - 560077</span>
                                     </div>
                                 </div>
                             </div>
 
                             <div className="space-y-4">
-                                <p className="text-blue-400 font-bold text-xs uppercase tracking-widest">Social Presence</p>
+                                <p className="text-[#EAB308] font-bold text-xs uppercase tracking-widest">Social Presence</p>
                                 <div className="flex gap-4">
                                     {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
-                                        <a key={i} href="#" className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition-all hover:-translate-y-1">
+                                        <a key={i} href="#" className="p-3 bg-white/10 rounded-full hover:bg-[#EAB308] hover:text-[#101828] transition-all hover:-translate-y-1">
                                             <Icon className="w-5 h-5" />
                                         </a>
                                     ))}
@@ -253,15 +270,15 @@ const Navbar = () => {
                             <div className="pt-8">
                                 <Link
                                     to="/admissions"
-                                    className="inline-block bg-blue-600 text-white font-black px-10 py-5 rounded-full hover:bg-blue-700 transition-all shadow-xl hover:shadow-blue-500/20 active:scale-95"
+                                    className="inline-block bg-[#EAB308] text-[#101828] font-black px-10 py-5 rounded-full hover:bg-white transition-all shadow-xl hover:shadow-yellow-500/20 active:scale-95"
                                 >
                                     APPLY NOW
                                 </Link>
                             </div>
                         </div>
 
-                        <div className="absolute bottom-12 left-12 opacity-10">
-                            <span className="text-8xl font-black leading-none">SCW</span>
+                        <div className="absolute bottom-12 left-12 opacity-5">
+                            <span className="text-8xl font-black leading-none text-white">SCW</span>
                         </div>
                     </div>
 

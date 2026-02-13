@@ -5,10 +5,10 @@ const Admissions = () => {
     return (
         <div className="flex flex-col">
             {/* Header Section */}
-            <section className="bg-[#0b1e3d] text-white py-20 px-4">
-                <div className="container mx-auto text-center space-y-4">
-                    <h1 className="text-4xl md:text-5xl font-bold">Admissions Overview</h1>
-                    <p className="text-xl text-blue-200 max-w-2xl mx-auto">
+            <section className="bg-[#101828] text-white py-24 px-4 relative overflow-hidden">
+                <div className="container mx-auto text-center space-y-6 relative z-10">
+                    <h1 className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight">Admissions Overview</h1>
+                    <p className="text-xl text-[#EAB308] max-w-2xl mx-auto font-bold uppercase tracking-widest text-sm">
                         Where Ambition Meets Opportunity. Join a community of achievers and shape your future with Sai College for Women.
                     </p>
                 </div>
@@ -18,7 +18,7 @@ const Admissions = () => {
             <section className="py-24 bg-white">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-16 space-y-4">
-                        <h2 className="text-3xl font-bold text-[#0b1e3d]">Admission Process</h2>
+                        <h2 className="text-3xl lg:text-5xl font-black text-[#101828]">Admission Process</h2>
                         <p className="text-slate-600 max-w-2xl mx-auto">
                             Follow these simple steps to secure your admission at Sai College for Women.
                         </p>
@@ -31,14 +31,14 @@ const Admissions = () => {
                             { step: '03', title: 'Criteria Check', desc: 'Our team will verify eligibility based on your academic performance.', icon: CheckCircle2 },
                             { step: '04', title: 'Confirmation', desc: 'Pay the admission fee to confirm your seat and receive your welcome kit.', icon: CreditCard },
                         ].map((s) => (
-                            <div key={s.step} className="relative p-8 bg-slate-50 rounded-2xl border border-slate-100 space-y-4 text-center">
-                                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white font-bold px-3 py-1 rounded-full text-xs">
+                            <div key={s.step} className="relative p-8 bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all group space-y-6 text-center">
+                                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#101828] text-[#EAB308] font-black px-4 py-1.5 rounded-full text-[10px] tracking-widest">
                                     STEP {s.step}
                                 </div>
-                                <div className="h-12 w-12 bg-white text-blue-600 rounded-xl flex items-center justify-center mx-auto shadow-sm">
-                                    <s.icon className="h-6 w-6" />
+                                <div className="h-16 w-16 bg-yellow-50 text-[#EAB308] rounded-2xl flex items-center justify-center mx-auto shadow-sm group-hover:bg-[#101828] group-hover:text-white transition-all">
+                                    <s.icon className="h-8 w-8" />
                                 </div>
-                                <h3 className="font-bold text-lg text-[#0b1e3d]">{s.title}</h3>
+                                <h3 className="font-black text-xl text-[#101828]">{s.title}</h3>
                                 <p className="text-slate-500 text-sm leading-relaxed">{s.desc}</p>
                             </div>
                         ))}
@@ -116,17 +116,17 @@ const Admissions = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="py-24 bg-[#0b1e3d]">
-                <div className="container mx-auto px-4 text-center space-y-8">
-                    <h2 className="text-3xl md:text-4xl font-bold text-white max-w-2xl mx-auto leading-tight">
+            <section className="py-24 bg-[#101828] relative overflow-hidden">
+                <div className="container mx-auto px-4 text-center space-y-10 relative z-10">
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white max-w-4xl mx-auto leading-tight">
                         Ready to Begin Your Journey at Sai College?
                     </h2>
-                    <div className="flex justify-center gap-4">
-                        <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white h-14 px-8 font-bold">
-                            DOWNLOAD BROCHURE <FileText className="ml-2 h-5 w-5" />
+                    <div className="flex flex-wrap justify-center gap-6">
+                        <Button size="lg" className="bg-[#EAB308] hover:bg-[#92400E] text-[#101828] hover:text-white h-16 px-10 font-black rounded-xl shadow-2xl shadow-yellow-500/20 active:scale-95 transition-all text-lg">
+                            DOWNLOAD BROCHURE <FileText className="ml-2 h-6 w-6" />
                         </Button>
-                        <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-[#0b1e3d] h-14 px-8 font-bold">
-                            APPLY ONLINE <ArrowRight className="ml-2 h-5 w-5" />
+                        <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-[#101828] h-16 px-10 font-black rounded-xl active:scale-95 transition-all text-lg">
+                            APPLY ONLINE <ArrowRight className="ml-2 h-6 w-6" />
                         </Button>
                     </div>
                 </div>

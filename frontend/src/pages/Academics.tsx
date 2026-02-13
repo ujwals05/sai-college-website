@@ -30,10 +30,10 @@ const Academics = () => {
     return (
         <div className="flex flex-col">
             {/* Header */}
-            <section className="bg-[#0b1e3d] text-white py-20 px-4">
-                <div className="container mx-auto text-center space-y-4">
-                    <h1 className="text-4xl md:text-5xl font-bold">Academic Excellence</h1>
-                    <p className="text-xl text-blue-200 max-w-2xl mx-auto">
+            <section className="bg-[#101828] text-white py-24 px-4 overflow-hidden relative">
+                <div className="container mx-auto text-center space-y-6 relative z-10">
+                    <h1 className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight">Academic Excellence</h1>
+                    <p className="text-xl text-[#EAB308] max-w-2xl mx-auto font-bold uppercase tracking-widest text-sm">
                         A curriculum designed to empower women through technical proficiency and leadership skills.
                     </p>
                 </div>
@@ -42,19 +42,19 @@ const Academics = () => {
             {/* Intro Section */}
             <section className="py-24 bg-white">
                 <div className="container mx-auto px-4 max-w-4xl text-center space-y-8">
-                    <h2 className="text-3xl font-bold text-[#0b1e3d]">Holistic Education for a Global World</h2>
+                    <h2 className="text-3xl lg:text-5xl font-black text-[#101828]">Holistic Education for a Global World</h2>
                     <p className="text-slate-600 text-lg leading-relaxed">
                         At Sai College for Women, we go beyond textbooks. Our academic philosophy integrates rigorous classroom learning with project-based experiences, guest lectures from industry veterans, and dedicated personality development sessions.
                     </p>
                     <div className="flex flex-wrap justify-center gap-6">
-                        <div className="flex items-center gap-2 text-slate-700 font-semibold bg-slate-50 px-4 py-2 rounded-full border border-slate-100">
-                            <CheckCircle2 className="h-5 w-5 text-blue-600" /> Professional Ethics
+                        <div className="flex items-center gap-2 text-slate-700 font-bold bg-slate-50 px-5 py-3 rounded-full border border-slate-100">
+                            <CheckCircle2 className="h-5 w-5 text-[#EAB308]" /> Professional Ethics
                         </div>
-                        <div className="flex items-center gap-2 text-slate-700 font-semibold bg-slate-50 px-4 py-2 rounded-full border border-slate-100">
-                            <CheckCircle2 className="h-5 w-5 text-blue-600" /> Digital Literacy
+                        <div className="flex items-center gap-2 text-slate-700 font-bold bg-slate-50 px-5 py-3 rounded-full border border-slate-100">
+                            <CheckCircle2 className="h-5 w-5 text-[#EAB308]" /> Digital Literacy
                         </div>
-                        <div className="flex items-center gap-2 text-slate-700 font-semibold bg-slate-50 px-4 py-2 rounded-full border border-slate-100">
-                            <CheckCircle2 className="h-5 w-5 text-blue-600" /> Leadership Skills
+                        <div className="flex items-center gap-2 text-slate-700 font-bold bg-slate-50 px-5 py-3 rounded-full border border-slate-100">
+                            <CheckCircle2 className="h-5 w-5 text-[#EAB308]" /> Leadership Skills
                         </div>
                     </div>
                 </div>
@@ -67,12 +67,12 @@ const Academics = () => {
                         {programs.map((p, i) => (
                             <div key={i} id={p.title.toLowerCase().split(' ')[0]} className={`flex flex-col lg:flex-row items-center gap-12 ${i % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
                                 <div className="lg:w-1/2 space-y-6">
-                                    <div className="h-14 w-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center">
+                                    <div className="h-14 w-14 bg-yellow-50 text-[#EAB308] rounded-2xl flex items-center justify-center">
                                         <p.icon className="h-8 w-8" />
                                     </div>
                                     <div className="space-y-2">
-                                        <h3 className="text-3xl font-bold text-[#0b1e3d]">{p.title}</h3>
-                                        <p className="text-blue-600 font-bold uppercase tracking-widest text-sm">{p.subtitle}</p>
+                                        <h3 className="text-3xl lg:text-4xl font-black text-[#101828]">{p.title}</h3>
+                                        <p className="text-[#EAB308] font-bold uppercase tracking-widest text-sm">{p.subtitle}</p>
                                     </div>
                                     <p className="text-slate-600 text-lg leading-relaxed">
                                         {p.desc}
@@ -85,7 +85,7 @@ const Academics = () => {
                                         ))}
                                     </ul>
                                     <div className="pt-4">
-                                        <Button asChild size="lg" className="bg-[#0b1e3d] text-white hover:bg-[#1a355e] h-12 px-8 font-bold">
+                                        <Button asChild size="lg" className="bg-[#EAB308] text-[#101828] hover:bg-[#92400E] hover:text-white h-14 px-10 font-black rounded-xl shadow-xl shadow-yellow-500/10 active:scale-95 transition-all">
                                             <Link to="/admissions">
                                                 ADMISSION INQUIRY <ArrowRight className="ml-2 h-5 w-5" />
                                             </Link>

@@ -52,10 +52,10 @@ const Faculty = () => {
     return (
         <div className="flex flex-col">
             {/* Header */}
-            <section className="bg-[#0b1e3d] text-white py-20 px-4">
-                <div className="container mx-auto text-center space-y-4">
-                    <h1 className="text-4xl md:text-5xl font-bold">Our Faculty</h1>
-                    <p className="text-xl text-blue-200 max-w-2xl mx-auto">
+            <section className="bg-[#101828] text-white py-24 px-4 overflow-hidden relative">
+                <div className="container mx-auto text-center space-y-6 relative z-10">
+                    <h1 className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight">Our Faculty</h1>
+                    <p className="text-xl text-[#EAB308] max-w-2xl mx-auto font-bold uppercase tracking-widest text-sm">
                         Meet the exceptional educators and industry experts dedication to building the leaders of tomorrow.
                     </p>
                 </div>
@@ -71,9 +71,9 @@ const Faculty = () => {
                                 <button
                                     key={dept}
                                     onClick={() => setActiveTab(dept)}
-                                    className={`px-6 py-2 rounded-full font-bold text-sm transition-all ${activeTab === dept
-                                            ? 'bg-blue-600 text-white'
-                                            : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
+                                    className={`px-6 py-2 rounded-full font-bold text-sm transition-all shadow-sm ${activeTab === dept
+                                        ? 'bg-[#101828] text-[#EAB308]'
+                                        : 'bg-white border border-gray-200 text-gray-500 hover:bg-gray-50'
                                         }`}
                                 >
                                     {dept}
@@ -85,7 +85,7 @@ const Faculty = () => {
                             <input
                                 type="text"
                                 placeholder="Search faculty..."
-                                className="w-full h-12 pl-12 pr-4 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                className="w-full h-12 pl-12 pr-4 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#EAB308] transition-all"
                             />
                         </div>
                     </div>
@@ -100,11 +100,11 @@ const Faculty = () => {
                                         alt={f.name}
                                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#101828]/90 via-[#101828]/20 to-transparent" />
                                     <div className="absolute bottom-6 left-6 right-6">
-                                        <div className="text-blue-400 font-bold text-xs uppercase tracking-widest mb-1">{f.dept}</div>
-                                        <div className="text-white text-2xl font-bold">{f.name}</div>
-                                        <div className="text-slate-300 text-sm font-medium">{f.role}</div>
+                                        <div className="text-[#EAB308] font-black text-xs uppercase tracking-[0.2em] mb-2">{f.dept}</div>
+                                        <div className="text-white text-2xl font-black tracking-tight">{f.name}</div>
+                                        <div className="text-slate-300 text-sm font-bold opacity-90">{f.role}</div>
                                     </div>
                                 </div>
                                 <div className="p-8 space-y-6 flex-grow flex flex-col">
@@ -113,14 +113,14 @@ const Faculty = () => {
                                     </p>
                                     <div className="pt-6 border-t border-slate-100 mt-auto flex justify-between items-center">
                                         <div className="flex gap-2">
-                                            <Button variant="outline" size="icon" className="h-10 w-10 rounded-full text-blue-600">
+                                            <Button variant="outline" size="icon" className="h-10 w-10 rounded-full border-gray-200 text-[#101828] hover:bg-[#101828] hover:text-[#EAB308] transition-all">
                                                 <Mail className="h-4 w-4" />
                                             </Button>
-                                            <Button variant="outline" size="icon" className="h-10 w-10 rounded-full text-blue-600">
+                                            <Button variant="outline" size="icon" className="h-10 w-10 rounded-full border-gray-200 text-[#101828] hover:bg-[#101828] hover:text-[#EAB308] transition-all">
                                                 <GraduationCap className="h-4 w-4" />
                                             </Button>
                                         </div>
-                                        <Button variant="link" className="text-blue-600 font-bold p-0 h-auto">
+                                        <Button variant="link" className="text-[#101828] hover:text-[#EAB308] font-black p-0 h-auto tracking-widest text-xs">
                                             VIEW PROFILE
                                         </Button>
                                     </div>

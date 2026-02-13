@@ -43,10 +43,10 @@ const Infrastructure = () => {
     return (
         <div className="flex flex-col">
             {/* Header */}
-            <section className="bg-[#0b1e3d] text-white py-20 px-4">
-                <div className="container mx-auto text-center space-y-4">
-                    <h1 className="text-4xl md:text-5xl font-bold">Campus Infrastructure</h1>
-                    <p className="text-xl text-blue-200 max-w-2xl mx-auto">
+            <section className="bg-[#101828] text-white py-24 px-4 overflow-hidden relative">
+                <div className="container mx-auto text-center space-y-6 relative z-10">
+                    <h1 className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight">Campus Infrastructure</h1>
+                    <p className="text-xl text-[#EAB308] max-w-2xl mx-auto font-bold uppercase tracking-widest text-sm">
                         World-class facilities designed to provide an inspiring environment for learning and personal growth.
                     </p>
                 </div>
@@ -64,14 +64,14 @@ const Infrastructure = () => {
                                         alt={f.title}
                                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                     />
-                                    <div className="absolute inset-0 bg-blue-900/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                        <div className="h-16 w-16 bg-white/90 rounded-full flex items-center justify-center text-blue-600 scale-0 group-hover:scale-100 transition-transform delay-100">
+                                    <div className="absolute inset-0 bg-[#101828]/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                        <div className="h-16 w-16 bg-[#EAB308] rounded-full flex items-center justify-center text-[#101828] scale-0 group-hover:scale-100 transition-transform delay-100 font-bold">
                                             <f.icon className="h-8 w-8" />
                                         </div>
                                     </div>
                                 </div>
                                 <div className="space-y-3 px-2">
-                                    <h3 className="text-2xl font-bold text-[#0b1e3d] group-hover:text-blue-600 transition-colors">{f.title}</h3>
+                                    <h3 className="text-2xl font-black text-[#101828] group-hover:text-[#EAB308] transition-colors">{f.title}</h3>
                                     <p className="text-slate-600 leading-relaxed">
                                         {f.desc}
                                     </p>
@@ -83,10 +83,10 @@ const Infrastructure = () => {
             </section>
 
             {/* Legacy/Experience section */}
-            <section className="py-24 bg-blue-50">
+            <section className="py-24 bg-gray-50">
                 <div className="container mx-auto px-4 text-center space-y-12">
                     <div className="space-y-4">
-                        <h2 className="text-3xl font-bold text-[#0b1e3d]">Experience Our Legacy</h2>
+                        <h2 className="text-3xl lg:text-5xl font-black text-[#101828]">Experience Our Legacy</h2>
                         <p className="text-slate-600 max-w-2xl mx-auto">
                             Our campus is more than just buildings; it's a vibrant ecosystem where history meets modern innovation.
                         </p>

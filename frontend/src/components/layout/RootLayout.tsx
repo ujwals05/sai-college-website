@@ -1,30 +1,15 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import { useEffect } from 'react';
 
 const RootLayout = () => {
-    const { pathname, hash } = useLocation();
-    const isHome = pathname === "/";
-
-    // Smooth scroll to hash links
-    useEffect(() => {
-        if (hash) {
-            const element = document.getElementById(hash.substring(1));
-            if (element) {
-                setTimeout(() => {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                }, 100);
-            }
-        } else if (!isHome) {
-            window.scrollTo(0, 0);
-        }
-    }, [pathname, hash, isHome]);
+    const location = useLocation();
+    const isHome = location.pathname === "/";
 
     return (
-        <div className="min-h-screen flex flex-col font-sans selection:bg-blue-100 selection:text-blue-900">
+        <div className="min-h-screen flex flex-col">
             <Navbar />
-            <main className={`flex-grow transition-all duration-300 ${!isHome ? 'pt-24 lg:pt-28' : ''}`}>
+            <main className={`flex-grow ${!isHome ? 'pt-28' : ''}`}>
                 <Outlet />
             </main>
             <Footer />

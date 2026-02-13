@@ -5,10 +5,10 @@ const Contact = () => {
     return (
         <div className="flex flex-col">
             {/* Header Section */}
-            <section className="bg-[#0b1e3d] text-white py-20 px-4">
-                <div className="container mx-auto text-center space-y-4">
-                    <h1 className="text-4xl md:text-5xl font-bold">Contact Us</h1>
-                    <p className="text-xl text-blue-200 max-w-2xl mx-auto">
+            <section className="bg-[#101828] text-white py-24 px-4 overflow-hidden relative">
+                <div className="container mx-auto text-center space-y-6 relative z-10">
+                    <h1 className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight">Contact Us</h1>
+                    <p className="text-xl text-[#EAB308] max-w-2xl mx-auto font-bold uppercase tracking-widest text-sm">
                         Have questions? We're here to help. Reach out to us for admissions, academic inquiries, or general information.
                     </p>
                 </div>
@@ -20,15 +20,15 @@ const Contact = () => {
                         {/* Contact Information */}
                         <div className="space-y-12">
                             <div className="space-y-6">
-                                <h2 className="text-3xl font-bold text-[#0b1e3d]">Get in Touch</h2>
+                                <h2 className="text-3xl lg:text-5xl font-black text-[#101828]">Get in Touch</h2>
                                 <p className="text-slate-600 text-lg leading-relaxed">
                                     Our dedicated staff is ready to assist you with any information you may need. Visit us or reach out via phone or email.
                                 </p>
                             </div>
 
                             <div className="grid gap-8">
-                                <div className="flex gap-6">
-                                    <div className="h-14 w-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center shrink-0">
+                                <div className="flex gap-6 group">
+                                    <div className="h-14 w-14 bg-yellow-50 text-[#EAB308] rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-[#101828] group-hover:text-white transition-all duration-300">
                                         <MapPin className="h-6 w-6" />
                                     </div>
                                     <div className="space-y-2">
@@ -40,8 +40,8 @@ const Contact = () => {
                                     </div>
                                 </div>
 
-                                <div className="flex gap-6">
-                                    <div className="h-14 w-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center shrink-0">
+                                <div className="flex gap-6 group">
+                                    <div className="h-14 w-14 bg-yellow-50 text-[#EAB308] rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-[#101828] group-hover:text-white transition-all duration-300">
                                         <Phone className="h-6 w-6" />
                                     </div>
                                     <div className="space-y-2">
@@ -53,8 +53,8 @@ const Contact = () => {
                                     </div>
                                 </div>
 
-                                <div className="flex gap-6">
-                                    <div className="h-14 w-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center shrink-0">
+                                <div className="flex gap-6 group">
+                                    <div className="h-14 w-14 bg-yellow-50 text-[#EAB308] rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-[#101828] group-hover:text-white transition-all duration-300">
                                         <Mail className="h-6 w-6" />
                                     </div>
                                     <div className="space-y-2">
@@ -66,8 +66,8 @@ const Contact = () => {
                                     </div>
                                 </div>
 
-                                <div className="flex gap-6">
-                                    <div className="h-14 w-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center shrink-0">
+                                <div className="flex gap-6 group">
+                                    <div className="h-14 w-14 bg-yellow-50 text-[#EAB308] rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-[#101828] group-hover:text-white transition-all duration-300">
                                         <Clock className="h-6 w-6" />
                                     </div>
                                     <div className="space-y-2">
@@ -82,10 +82,10 @@ const Contact = () => {
                         </div>
 
                         {/* Inquiry Form */}
-                        <div className="bg-slate-50 p-10 rounded-3xl border border-slate-200 space-y-8">
+                        <div className="bg-white p-10 rounded-[2.5rem] border border-gray-100 shadow-xl shadow-gray-200/50 space-y-8">
                             <div className="space-y-2">
-                                <h3 className="text-2xl font-bold text-[#0b1e3d]">Send an Inquiry</h3>
-                                <p className="text-slate-500">Fill out the form below and we'll get back to you shortly.</p>
+                                <h3 className="text-2xl lg:text-3xl font-black text-[#101828]">Send an Inquiry</h3>
+                                <p className="text-slate-500 font-medium">Fill out the form below and we'll get back to you shortly.</p>
                             </div>
 
                             <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
@@ -127,7 +127,7 @@ const Contact = () => {
                                     />
                                 </div>
 
-                                <Button className="w-full h-14 bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg rounded-xl shadow-lg shadow-blue-200">
+                                <Button className="w-full h-16 bg-[#101828] hover:bg-[#EAB308] text-white hover:text-[#101828] font-black text-lg rounded-2xl shadow-xl transition-all active:scale-[0.98]">
                                     SEND MESSAGE <Send className="ml-2 h-5 w-5" />
                                 </Button>
                             </form>
