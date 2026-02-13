@@ -8,9 +8,11 @@ export const fullMenu: MenuItem[] = [
     {
         label: "About Us",
         children: [
-            { label: "Our Legacy", path: "/about#legacy" },
-            { label: "Vision & Mission", path: "/about#vision-mission" },
-            { label: "Principal's Message", path: "/about#principal-message" },
+            { label: "Overview", path: "/about" },
+            { label: "Our Legacy", path: "/about/history" },
+            { label: "Vision & Mission", path: "/about/vision-mission" },
+            { label: "Chairman", path: "/about/chairman-message" },
+            { label: "Principal", path: "/about/principal-message" },
         ],
     },
     {

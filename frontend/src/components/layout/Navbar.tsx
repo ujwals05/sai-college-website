@@ -9,16 +9,6 @@ const Navbar = () => {
     const [scrolled, setScrolled] = useState(false)
     const location = useLocation()
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
-
     const toggleMenu = () => {
         setIsMenuOpen(prev => !prev)
         if (!isMenuOpen) {
@@ -70,11 +60,11 @@ const Navbar = () => {
                         {/* LOGO BUBBLE */}
                         <Link
                             to="/"
-                            className={`flex items-center gap-3 bg-white/95 backdrop-blur-md rounded-full px-5 py-2.5 shadow-xl hover:shadow-2xl transition-all border border-white/20 group ${isMenuOpen ? "opacity-0 invisible scale-95" : "opacity-100 visible scale-100"
+                            className={`flex items-center gap-3 bg-white/95 backdrop-blur-md rounded-full pl-2 pr-6 py-2 shadow-xl hover:shadow-2xl transition-all border border-white/20 group ${isMenuOpen ? "opacity-0 invisible scale-95" : "opacity-100 visible scale-100"
                                 }`}
                         >
-                            <div className="h-10 w-10 flex items-center justify-center rounded-full bg-[#1b2c47] text-white font-bold text-sm shadow-inner">
-                                SCW
+                            <div className="h-14 w-14 flex items-center justify-center rounded-full bg-white shadow-sm overflow-hidden border border-gray-100">
+                                <img src="/college_logo_.png" alt="Sai College Logo" className="w-full h-full object-contain p-1" />
                             </div>
 
                             <div className="hidden sm:block">
@@ -91,34 +81,35 @@ const Navbar = () => {
                         {/* DESKTOP NAVIGATION */}
                         <nav
                             className={`hidden lg:flex items-center gap-8 transition-all duration-300 ${scrolled
-                                    ? "opacity-0 invisible -translate-y-2"
-                                    : "opacity-100 visible translate-y-0"
+                                ? "opacity-0 invisible -translate-y-2"
+                                : "opacity-100 visible translate-y-0"
                                 }`}
                         >
                             <Link
                                 to="/"
-                                className="text-white font-semibold tracking-wide hover:text-yellow-400 transition-colors"
+                                className="text-blue-400 font-semibold tracking-wide hover:text-yellow-400 transition-colors"
                             >
                                 Home
                             </Link>
 
                             <Link
                                 to="/about"
-                                className="text-white font-semibold tracking-wide hover:text-yellow-400 transition-colors"
+                                className="text-blue-400 font-semibold tracking-wide hover:text-yellow-400 transition-colors"
                             >
                                 About Us
                             </Link>
 
                             <Link
                                 to="/contact"
-                                className="text-white font-semibold tracking-wide hover:text-yellow-400 transition-colors"
+                                className="text-blue-400 font-semibold tracking-wide hover:text-yellow-400 transition-colors duration-300"
                             >
                                 Contact Us
                             </Link>
 
+
                             <Link
                                 to="/admissions"
-                                className="bg-yellow-400 text-[#1b2c47] px-5 py-2 rounded-full font-semibold hover:bg-yellow-300 transition-all"
+                                className="bg-yellow-400 text-[#1b2c47] px-5 py-2 rounded-full font-semibold hover:bg-blue-800 hover:text-white transition-all"
                             >
                                 Apply Now
                             </Link>

@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { ArrowRight, BookOpen, Users, GraduationCap, Award, CheckCircle } from 'lucide-react';
+import { ArrowRight, BookOpen, GraduationCap, Award, CheckCircle, Briefcase, Users, Heart, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import useEmblaCarousel from "embla-carousel-react"
 import { useEffect, useCallback, useState } from "react"
@@ -112,8 +112,8 @@ const Home = () => {
                                 key={index}
                                 onClick={() => emblaApi?.scrollTo(index)}
                                 className={`h-1.5 rounded-full transition-all duration-300 ${selectedIndex === index
-                                        ? "w-10 bg-blue-500"
-                                        : "w-4 bg-white/40 hover:bg-white/70"
+                                    ? "w-10 bg-blue-500"
+                                    : "w-4 bg-white/40 hover:bg-white/70"
                                     }`}
                             />
                         ))}
@@ -231,6 +231,101 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            {/* ================= QUICK LINKS ================= */}
+            <section className="py-28 bg-gray-50">
+                <div className="container mx-auto px-6">
+
+                    {/* Section Header */}
+                    <div className="text-center max-w-3xl mx-auto mb-20 space-y-5">
+                        <h2 className="text-4xl lg:text-5xl font-extrabold text-[#1b2c47]">
+                            Quick Links
+                        </h2>
+                        <p className="text-gray-500 text-lg">
+                            Access important academic and campus resources
+                        </p>
+                    </div>
+
+                    {/* Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+
+                        {[
+                            {
+                                title: "Admissions",
+                                desc: "Apply for PUC, BCA and Commerce programs",
+                                icon: GraduationCap,
+                                link: "/admissions"
+                            },
+                            {
+                                title: "Library",
+                                desc: "Browse books, journals and digital resources",
+                                icon: BookOpen,
+                                link: "/library"
+                            },
+                            {
+                                title: "Campus Life",
+                                desc: "Explore student activities and facilities",
+                                icon: Users,
+                                link: "/campus"
+                            },
+                            {
+                                title: "Faculty",
+                                desc: "Meet our experienced teaching staff",
+                                icon: Users,
+                                link: "/faculty"
+                            },
+                            {
+                                title: "Non-Academics",
+                                desc: "Sports, cultural & extracurricular programs",
+                                icon: Briefcase,
+                                link: "/non-academics"
+                            },
+                            {
+                                title: "Examinations",
+                                desc: "Results, schedules and exam guidelines",
+                                icon: CheckCircle,
+                                link: "/examinations"
+                            },
+                            {
+                                title: "Student Welfare",
+                                desc: "Counselling and student support services",
+                                icon: Heart,
+                                link: "/student-welfare"
+                            },
+                            {
+                                title: "Alumni",
+                                desc: "Connect with our alumni network",
+                                icon: Globe,
+                                link: "/alumni"
+                            },
+                        ].map((item, index) => (
+                            <Link
+                                to={item.link}
+                                key={index}
+                                className="group bg-white rounded-3xl p-10 text-center border border-gray-100 shadow-sm transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 hover:border-blue-200"
+                            >
+                                {/* Icon */}
+                                <div className="mx-auto mb-6 h-20 w-20 rounded-full bg-yellow-100 flex items-center justify-center transition-all duration-500 group-hover:bg-blue-600">
+                                    <item.icon className="h-8 w-8 text-blue-700 group-hover:text-white transition-all duration-500" />
+                                </div>
+
+                                {/* Title */}
+                                <h3 className="text-xl font-bold text-[#1b2c47] mb-3">
+                                    {item.title}
+                                </h3>
+
+                                {/* Description */}
+                                <p className="text-gray-500 text-sm leading-relaxed">
+                                    {item.desc}
+                                </p>
+                            </Link>
+                        ))}
+
+                    </div>
+                </div>
+            </section>
+
+
         </div>
     );
 };
