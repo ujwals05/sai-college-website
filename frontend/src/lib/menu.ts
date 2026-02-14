@@ -18,9 +18,18 @@ export const fullMenu: MenuItem[] = [
     {
         label: "Academics",
         children: [
-            { label: "PUC", path: "/academics#pre-university" },
-            { label: "BCA", path: "/academics#bca" },
-            { label: "Commerce", path: "/academics#b.com" },
+            { label: "Overview", path: "/academics" },
+            {
+                label: "PUC",
+                children: [
+                    { label: "Arts", path: "/academics/puc" },
+                    { label: "Science", path: "/academics/puc" },
+                    { label: "Commerce", path: "/academics/puc" },
+                ]
+            },
+            { label: "BCA", path: "/academics/bca" },
+            { label: "B.COM", path: "/academics/bcom" },
+            { label: "B.COM with Data Analytics", path: "/academics/bcom-data-analytics" },
         ],
     },
     {

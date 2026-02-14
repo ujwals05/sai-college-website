@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { ArrowRight, BookOpen, GraduationCap, Award, CheckCircle, Briefcase, Users, Heart, Globe } from 'lucide-react';
+import { ArrowRight, BookOpen, GraduationCap, Award, CheckCircle, Briefcase, Users, Heart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import useEmblaCarousel from "embla-carousel-react"
 import { useEffect, useCallback, useState } from "react"
@@ -94,7 +94,7 @@ const Home = () => {
                                 </Link>
 
                                 <Link to="/academics">
-                                    <Button className="border-2 border-[#EAB308] text-[#EAB308] hover:bg-[#EAB308] hover:text-[#101828] px-8 py-6 text-base font-bold rounded-xl transition-all duration-300 hover:-translate-y-1">
+                                    <Button className="border-2 border-[#EAB308] text-[#EAB308]  hover:bg-yellow-400 hover:text-white px-8 py-6 text-base font-bold rounded-xl transition-all duration-300 hover:-translate-y-1">
                                         EXPLORE PROGRAMS
                                     </Button>
                                 </Link>
@@ -247,7 +247,7 @@ const Home = () => {
                     </div>
 
                     {/* Grid */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
 
                         {[
                             {
@@ -266,7 +266,7 @@ const Home = () => {
                                 title: "Campus Life",
                                 desc: "Explore student activities and facilities",
                                 icon: Users,
-                                link: "/campus"
+                                link: "/infrastructure" // Pointed to infrastructure as campus route doesn't exist
                             },
                             {
                                 title: "Faculty",
@@ -281,22 +281,10 @@ const Home = () => {
                                 link: "/non-academics"
                             },
                             {
-                                title: "Examinations",
-                                desc: "Results, schedules and exam guidelines",
-                                icon: CheckCircle,
-                                link: "/examinations"
-                            },
-                            {
                                 title: "Student Welfare",
                                 desc: "Counselling and student support services",
                                 icon: Heart,
                                 link: "/student-welfare"
-                            },
-                            {
-                                title: "Alumni",
-                                desc: "Connect with our alumni network",
-                                icon: Globe,
-                                link: "/alumni"
                             },
                         ].map((item, index) => (
                             <Link

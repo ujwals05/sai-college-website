@@ -96,21 +96,21 @@ const Navbar = () => {
                         >
                             <Link
                                 to="/"
-                                className="text-blue-500 font-semibold tracking-wide hover:text-yellow-400 transition-colors"
+                                className="text-blue-400 font-semibold tracking-wide hover:text-yellow-400 transition-colors"
                             >
                                 Home
                             </Link>
 
                             <Link
                                 to="/about"
-                                className="text-blue-500 font-semibold tracking-wide hover:text-yellow-400 transition-colors"
+                                className="text-blue-400 font-semibold tracking-wide hover:text-yellow-400 transition-colors"
                             >
                                 About Us
                             </Link>
 
                             <Link
                                 to="/contact"
-                                className="text-blue-500 font-semibold tracking-wide hover:text-yellow-400 transition-colors duration-300"
+                                className="text-blue-400 font-semibold tracking-wide hover:text-yellow-400 transition-colors duration-300"
                             >
                                 Contact Us
                             </Link>
