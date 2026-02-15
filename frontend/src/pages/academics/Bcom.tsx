@@ -1,4 +1,5 @@
-import { Landmark, PieChart, Users2, ShieldCheck, TrendingUp, Handshake } from 'lucide-react';
+import { Landmark, PieChart, Users2, ShieldCheck, TrendingUp, Handshake, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Bcom = () => {
     return (
@@ -68,6 +69,34 @@ const Bcom = () => {
                         <p className="text-gray-500 leading-relaxed">
                             Dedicated support for campus interviews, internship opportunities, and soft-skill development sessions.
                         </p>
+                    </div>
+                </div>
+            </div>
+            {/* Admissions Quick Links */}
+            <div className="bg-[#101828] text-white rounded-[2.5rem] p-10 lg:p-16 space-y-8 relative overflow-hidden">
+                <div className="relative z-10 text-center lg:text-left space-y-6">
+                    <h3 className="text-3xl font-black">Begin Your Career in Commerce</h3>
+                    <p className="text-gray-400 max-w-xl">
+                        Interested in our B.Com programs? Find all the admission details you need to get started.
+                    </p>
+                    <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+                        {[
+                            { label: 'Admission Process', to: '/admissions#process' },
+                            { label: 'Fee Structure', to: '/admissions#fees' },
+                            { label: 'Eligibility', to: '/admissions#eligibility' },
+                            { label: 'Apply Now', to: '/admissions#apply', primary: true },
+                        ].map((link) => (
+                            <Link
+                                key={link.label}
+                                to={link.to}
+                                className={`px-6 py-3 rounded-xl font-bold text-sm flex items-center gap-2 transition-all ${link.primary
+                                    ? "bg-[#EAB308] text-[#101828] hover:bg-white"
+                                    : "bg-white/10 hover:bg-white/20"
+                                    }`}
+                            >
+                                {link.label} <ArrowRight className="h-4 w-4" />
+                            </Link>
+                        ))}
                     </div>
                 </div>
             </div>

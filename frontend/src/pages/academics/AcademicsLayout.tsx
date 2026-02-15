@@ -10,7 +10,7 @@ const AcademicsLayout = () => {
     ];
 
     return (
-        <div className="flex min-h-screen bg-gray-50 pt-20">
+        <div className="flex min-h-screen">
             {/* Sidebar */}
             <aside className="w-80 bg-white border-r border-gray-100 p-8 hidden lg:block overflow-y-auto">
                 <div className="sticky top-24">

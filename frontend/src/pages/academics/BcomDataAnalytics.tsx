@@ -1,4 +1,5 @@
-import { BarChart3, Binary, BrainCircuit, Globe, LineChart, SearchCode } from 'lucide-react';
+import { BarChart3, Binary, BrainCircuit, Globe, LineChart, SearchCode, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const BcomDataAnalytics = () => {
     return (
@@ -59,6 +60,34 @@ const BcomDataAnalytics = () => {
 
             <div className="p-10 bg-amber-50 rounded-[2rem] border border-amber-100 italic font-bold text-amber-900 text-center">
                 "Turning data into decisions and accounts into analytics."
+            </div>
+            {/* Admissions Quick Links */}
+            <div className="bg-[#101828] text-white rounded-[2.5rem] p-10 lg:p-16 space-y-8 relative overflow-hidden">
+                <div className="relative z-10 text-center lg:text-left space-y-6">
+                    <h3 className="text-3xl font-black">Master the Future of Data</h3>
+                    <p className="text-gray-400 max-w-xl">
+                        Launch your career in analytical commerce. Explore admission guidelines and secure your place today.
+                    </p>
+                    <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+                        {[
+                            { label: 'Check Eligibility', to: '/admissions#eligibility' },
+                            { label: 'Data Analytics Fees', to: '/admissions#fees' },
+                            { label: 'Admission Path', to: '/admissions#process' },
+                            { label: 'Apply Now', to: '/admissions#apply', primary: true },
+                        ].map((link) => (
+                            <Link
+                                key={link.label}
+                                to={link.to}
+                                className={`px-6 py-3 rounded-xl font-bold text-sm flex items-center gap-2 transition-all ${link.primary
+                                    ? "bg-[#EAB308] text-[#101828] hover:bg-white"
+                                    : "bg-white/10 hover:bg-white/20"
+                                    }`}
+                            >
+                                {link.label} <ArrowRight className="h-4 w-4" />
+                            </Link>
+                        ))}
+                    </div>
+                </div>
             </div>
         </div>
     );
