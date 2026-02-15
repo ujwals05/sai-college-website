@@ -20,7 +20,11 @@ import Bca from './pages/academics/Bca';
 import Bcom from './pages/academics/Bcom';
 import BcomDataAnalytics from './pages/academics/BcomDataAnalytics';
 import Library from './pages/Library';
-import StudentWelfare from './pages/StudentWelfare';
+import StudentLifeLayout from './pages/student-life/StudentLifeLayout';
+import Welfare from './pages/student-life/Welfare';
+import AntiRagging from './pages/student-life/AntiRagging';
+import Placement from './pages/student-life/Placement';
+import Alumni from './pages/student-life/Alumni';
 import NonAcademics from './pages/non-academics/NonAcademicsHome';
 import NonAcademicsLayout from './pages/non-academics/NonAcademicsLayout';
 // import Sports from './pages/non-academics/Sports';
@@ -54,7 +58,12 @@ function App() {
           <Route path="admissions" element={<Admissions />} />
           <Route path="library" element={<Library />} />
           <Route path="infrastructure" element={<Infrastructure />} />
-          <Route path="student-welfare" element={<StudentWelfare />} />
+          <Route path="student-life" element={<StudentLifeLayout />}>
+            <Route index element={<Welfare />} />
+            <Route path="anti-ragging" element={<AntiRagging />} />
+            <Route path="placement" element={<Placement />} />
+            <Route path="alumni" element={<Alumni />} />
+          </Route>
           <Route path="non-academics" element={<NonAcademicsLayout />}>
             <Route index element={<NonAcademics />} />
             <Route path="sports" element={<Sports />} />

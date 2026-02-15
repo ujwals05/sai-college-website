@@ -5,15 +5,15 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const heroImages = [
     {
-        url: "https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&q=80&w=1500",
+        url: "./hero/hero1.png",
         caption: "Excellence in Women's Education"
     },
     {
-        url: "https://images.unsplash.com/photo-152305085306e-88021f879ad5?auto=format&fit=crop&q=80&w=1500",
+        url: "./hero/hero2.png",
         caption: "State-of-the-Art Campus Facilities"
     },
     {
-        url: "https://images.unsplash.com/photo-1523240795203-d684964f852e?auto=format&fit=crop&q=80&w=1500",
+        url: "./hero/hero3.png",
         caption: "Empowering Future Leaders"
     }
 ];

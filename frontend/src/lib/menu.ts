@@ -58,7 +58,10 @@ export const fullMenu: MenuItem[] = [
     {
         label: "Student Life",
         children: [
-            { label: "Student Welfare", path: "/student-welfare" },
+            { label: "Student Welfare", path: "/student-life" },
+            { label: "Anti Ragging", path: "/student-life/anti-ragging" },
+            { label: "Placements", path: "/student-life/placement" },
+            { label: "Alumni Association", path: "/student-life/alumni" },
         ],
     },
     {
