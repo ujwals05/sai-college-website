@@ -30,7 +30,7 @@ const Home = () => {
         onSelect()
 
         const interval = setInterval(() => {
-            emblaApi.scrollNext()
+            emblaApi?.scrollNext()
         }, 6000)
 
         return () => clearInterval(interval)
@@ -39,8 +39,7 @@ const Home = () => {
     return (
         <div className="flex flex-col">
             {/* ================= HERO SECTION ================= */}
-            <section className="relative min-h-screen w-full text-white overflow-hidden">
-
+            <section className="relative h-screen min-h-[600px] w-full text-white overflow-hidden bg-[#101828]">
                 {/* Background Carousel */}
                 <div className="absolute inset-0 z-0" ref={emblaRef}>
                     <div className="flex h-full">
@@ -59,7 +58,7 @@ const Home = () => {
                 </div>
 
                 {/* Hero Content */}
-                <div className="relative z-10 flex items-center min-h-screen">
+                <div className="relative z-10 flex items-center h-screen min-h-[600px]">
                     <div className="container mx-auto px-6 lg:px-12">
                         <div className="max-w-3xl space-y-6">
 

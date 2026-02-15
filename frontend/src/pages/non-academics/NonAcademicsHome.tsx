@@ -1,6 +1,6 @@
 import { Trophy, Music, Heart, Camera, MapPin, Users } from 'lucide-react';
 
-const NonAcademics = () => {
+const NonAcademicsHome = () => {
     return (
         <div className="flex flex-col">
             {/* Header */}
@@ -100,4 +100,4 @@ const BookOpen = ({ className }: { className?: string }) => (
     </svg>
 );
 
-export default NonAcademics;
+export default NonAcademicsHome;

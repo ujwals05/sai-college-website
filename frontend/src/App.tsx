@@ -21,7 +21,13 @@ import Bcom from './pages/academics/Bcom';
 import BcomDataAnalytics from './pages/academics/BcomDataAnalytics';
 import Library from './pages/Library';
 import StudentWelfare from './pages/StudentWelfare';
-import NonAcademics from './pages/NonAcademics';
+import NonAcademics from './pages/non-academics/NonAcademicsHome';
+import NonAcademicsLayout from './pages/non-academics/NonAcademicsLayout';
+// import Sports from './pages/non-academics/Sports';
+import Sports from './pages/non-academics/Sports';
+import Cultural from './pages/non-academics/Cultural';
+import Spiritial from './pages/non-academics/Spiritual';
+import Nss from './pages/non-academics/Nss';
 
 function App() {
   return (
@@ -49,7 +55,13 @@ function App() {
           <Route path="library" element={<Library />} />
           <Route path="infrastructure" element={<Infrastructure />} />
           <Route path="student-welfare" element={<StudentWelfare />} />
-          <Route path="non-academics" element={<NonAcademics />} />
+          <Route path="non-academics" element={<NonAcademicsLayout />}>
+            <Route index element={<NonAcademics />} />
+            <Route path="sports" element={<Sports />} />
+            <Route path="cultural" element={<Cultural />} />
+            <Route path="spiritual" element={<Spiritial />} />
+            <Route path="nss" element={<Nss />} />
+          </Route>
           <Route path="faculty" element={<Faculty />} />
           <Route path="contact" element={<Contact />} />
         </Route>

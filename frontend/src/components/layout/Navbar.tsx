@@ -117,10 +117,10 @@ const Navbar = () => {
                             </Link>
 
                             <Link
-                                to="/library"
+                                to="/infrastructure"
                                 className="text-blue-400 font-semibold tracking-wide hover:text-yellow-400 transition-colors"
                             >
-                                Library
+                                Campus
                             </Link>
 
                             <Link

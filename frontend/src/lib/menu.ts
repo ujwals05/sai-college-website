@@ -39,15 +39,25 @@ export const fullMenu: MenuItem[] = [
     },
     {
         label: "Campus",
+        path: "/infrastructure",
         children: [
             { label: "Infrastructure", path: "/infrastructure" },
             { label: "Library", path: "/library" },
         ]
     },
     {
+        label: "Non Academics",
+        children: [
+            { label: "Overview", path: "/non-academics" },
+            { label: "Sports", path: "/non-academics/sports" },
+            { label: "Cultural", path: "/non-academics/cultural" },
+            { label: "Spiritual", path: "/non-academics/spiritual" },
+            { label: "NSS", path: "/non-academics/nss" },
+        ],
+    },
+    {
         label: "Student Life",
         children: [
-            { label: "Non Academics", path: "/non-academics" },
             { label: "Student Welfare", path: "/student-welfare" },
         ],
     },
