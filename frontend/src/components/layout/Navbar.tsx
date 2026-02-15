@@ -108,6 +108,21 @@ const Navbar = () => {
                                 About Us
                             </Link>
 
+
+                            <Link
+                                to="/academics"
+                                className="text-blue-400 font-semibold tracking-wide hover:text-yellow-400 transition-colors"
+                            >
+                                Academics
+                            </Link>
+
+                            <Link
+                                to="/library"
+                                className="text-blue-400 font-semibold tracking-wide hover:text-yellow-400 transition-colors"
+                            >
+                                Library
+                            </Link>
+
                             <Link
                                 to="/contact"
                                 className="text-blue-400 font-semibold tracking-wide hover:text-yellow-400 transition-colors duration-300"

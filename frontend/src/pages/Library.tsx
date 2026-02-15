@@ -1,4 +1,4 @@
-import { Search, Book, Monitor, Globe, Clock, ShieldCheck, Library as LibraryIcon, ChevronLeft, ChevronRight, CheckCircle2, Quote } from 'lucide-react';
+import { Search, Book, Monitor, Globe, Clock, ShieldCheck, Library as LibraryIcon, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import useEmblaCarousel from "embla-carousel-react";
 import { useEffect, useCallback, useState } from "react";
@@ -55,32 +55,32 @@ const Library = () => {
         return () => clearInterval(interval);
     }, [emblaApi, onSelect]);
 
-    const facilities = [
-        {
-            title: 'Digital Repository',
-            category: 'E-Resources',
-            desc: 'Our Information Centre provides seamless access to prestigious international research databases including IEEE, JSTOR, and the N-LIST program. Students can access millions of journals and articles for their research work.',
-            icon: Globe,
-            image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=1200",
-            features: ['N-LIST Access', 'IEEE/JSTOR Journals', 'Remote Access Hub', 'E-Thesis Support']
-        },
-        {
-            title: 'Reference Section',
-            category: 'Physical Collection',
-            desc: 'The heart of our library houses a comprehensive collection of textbooks, reference guides, rare manuscripts, and encyclopedias across diverse academic disciplines, from Humanities to Advanced Computing.',
-            icon: Book,
-            image: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&q=80&w=1200",
-            features: ['25,000+ Volumes', 'Research Journals', 'Archival Material', 'Subject Encyclopedias']
-        },
-        {
-            title: 'E-Learning Zone',
-            category: 'Technology',
-            desc: 'Equipped with high-performance systems and dedicated high-speed internet, this zone is designed for intensive research, project documentation, and accessing online certification courses.',
-            icon: Monitor,
-            image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=1200",
-            features: ['Workstation Access', 'Suraj (Digital Repository)', 'Video Lecture Library', 'Printing Facility']
-        }
-    ];
+    // const facilities = [
+    //     {
+    //         title: 'Digital Repository',
+    //         category: 'E-Resources',
+    //         desc: 'Our Information Centre provides seamless access to prestigious international research databases including IEEE, JSTOR, and the N-LIST program. Students can access millions of journals and articles for their research work.',
+    //         icon: Globe,
+    //         image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=1200",
+    //         features: ['N-LIST Access', 'IEEE/JSTOR Journals', 'Remote Access Hub', 'E-Thesis Support']
+    //     },
+    //     {
+    //         title: 'Reference Section',
+    //         category: 'Physical Collection',
+    //         desc: 'The heart of our library houses a comprehensive collection of textbooks, reference guides, rare manuscripts, and encyclopedias across diverse academic disciplines, from Humanities to Advanced Computing.',
+    //         icon: Book,
+    //         image: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&q=80&w=1200",
+    //         features: ['25,000+ Volumes', 'Research Journals', 'Archival Material', 'Subject Encyclopedias']
+    //     },
+    //     {
+    //         title: 'E-Learning Zone',
+    //         category: 'Technology',
+    //         desc: 'Equipped with high-performance systems and dedicated high-speed internet, this zone is designed for intensive research, project documentation, and accessing online certification courses.',
+    //         icon: Monitor,
+    //         image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=1200",
+    //         features: ['Workstation Access', 'Suraj (Digital Repository)', 'Video Lecture Library', 'Printing Facility']
+    //     }
+    // ];
 
     return (
         <div className="flex flex-col space-y-24 pb-24 bg-white">

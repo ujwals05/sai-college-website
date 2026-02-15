@@ -55,10 +55,17 @@ const Footer = () => {
                 <div>
                     <h3 className="font-bold text-[#EAB308] uppercase tracking-widest text-xs mb-8">Quick Navigation</h3>
                     <ul className="space-y-4 text-white/80">
-                        {["About Us", "Admissions", "Faculty", "Library", "Campus", "Placements"].map((item) => (
-                            <li key={item}>
-                                <Link to="#" className="hover:text-[#EAB308] transition-colors font-medium">
-                                    {item}
+                        {[
+                            { name: "About Us", path: "/about" },
+                            { name: "Admissions", path: "/admissions" },
+                            { name: "Faculty", path: "/faculty" },
+                            { name: "Library", path: "/library" },
+                            { name: "Infrastructure", path: "/infrastructure" },
+                            { name: "Academics", path: "/academics" }
+                        ].map((item) => (
+                            <li key={item.name}>
+                                <Link to={item.path} className="hover:text-[#EAB308] transition-colors font-medium">
+                                    {item.name}
                                 </Link>
                             </li>
                         ))}
@@ -70,16 +77,16 @@ const Footer = () => {
                     <h3 className="font-bold text-[#EAB308] uppercase tracking-widest text-xs mb-8">Student Resources</h3>
                     <ul className="space-y-4 text-white/80">
                         {[
-                            "Anti Ragging",
-                            "Alumni",
-                            "Sports & Games",
-                            "Cultural Activities",
-                            "Examinations",
-                            "Careers"
+                            { name: "Student Welfare", path: "/student-welfare" },
+                            { name: "Non-Academics", path: "/non-academics" },
+                            { name: "Infrastructure", path: "/infrastructure" },
+                            { name: "Admissions", path: "/admissions" },
+                            { name: "Life in Campus", path: "/about" },
+                            { name: "Contact Support", path: "/contact" }
                         ].map((item) => (
-                            <li key={item}>
-                                <Link to="#" className="hover:text-[#EAB308] transition-colors font-medium">
-                                    {item}
+                            <li key={item.name}>
+                                <Link to={item.path} className="hover:text-[#EAB308] transition-colors font-medium">
+                                    {item.name}
                                 </Link>
                             </li>
                         ))}

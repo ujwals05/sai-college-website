@@ -10,10 +10,15 @@ export const fullMenu: MenuItem[] = [
         children: [
             { label: "Overview", path: "/about" },
             { label: "Our Legacy", path: "/about/history" },
+            { label: "Founders", path: "/about/founders" },
             { label: "Vision & Mission", path: "/about/vision-mission" },
             { label: "Chairman", path: "/about/chairman-message" },
             { label: "Principal", path: "/about/principal-message" },
         ],
+    },
+    {
+        label: "Admissions",
+        path: "/admissions",
     },
     {
         label: "Academics",
@@ -31,10 +36,6 @@ export const fullMenu: MenuItem[] = [
             { label: "B.COM", path: "/academics/bcom" },
             { label: "B.COM with Data Analytics", path: "/academics/bcom-data-analytics" },
         ],
-    },
-    {
-        label: "Admissions",
-        path: "/admissions",
     },
     {
         label: "Campus",
