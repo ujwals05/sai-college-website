@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight, CheckCircle2, FileText, CreditCard, ClipboardList } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Admissions = () => {
     return (
@@ -115,7 +116,39 @@ const Admissions = () => {
                 </div>
             </section>
 
-            {/* CTA Section */}
+            {/* Explore Academics Quick Links */}
+            <section className="py-24 bg-white">
+                <div className="container mx-auto px-4">
+                    <div className="text-center mb-16 space-y-4">
+                        <p className="text-blue-600 font-black text-xs tracking-[0.3em] uppercase">Your Future Starts Here</p>
+                        <h2 className="text-3xl lg:text-5xl font-black text-[#101828]">Explore Our Academic Programs</h2>
+                        <p className="text-slate-600 max-w-2xl mx-auto">
+                            Choose from our diverse range of undergraduate and pre-university programs designed to empower and inspire.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {[
+                            { title: 'PUC Programs', path: '/academics/puc', desc: 'Science, Commerce & Arts' },
+                            { title: 'BCA', path: '/academics/bca', desc: 'Computer Applications' },
+                            { title: 'B.Com', path: '/academics/bcom', desc: 'General & Vocational' },
+                            { title: 'B.Com Data Analytics', path: '/academics/bcom-data-analytics', desc: 'Specialized Professional Course' },
+                        ].map((course) => (
+                            <Link
+                                key={course.title}
+                                to={course.path}
+                                className="group p-8 bg-gray-50 rounded-3xl border border-gray-100 hover:bg-[#101828] transition-all duration-300"
+                            >
+                                <h3 className="text-xl font-black text-[#101828] group-hover:text-[#EAB308] mb-2">{course.title}</h3>
+                                <p className="text-slate-500 group-hover:text-slate-400 text-sm mb-6">{course.desc}</p>
+                                <div className="flex items-center text-[#101828] group-hover:text-[#EAB308] font-bold text-sm">
+                                    Learn More <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-2 transition-transform" />
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            </section>
             <section className="py-24 bg-[#101828] relative overflow-hidden">
                 <div className="container mx-auto px-4 text-center space-y-10 relative z-10">
                     <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white max-w-4xl mx-auto leading-tight">
