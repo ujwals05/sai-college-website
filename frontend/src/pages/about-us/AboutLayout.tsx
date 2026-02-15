@@ -2,26 +2,44 @@ import { NavLink, Outlet } from "react-router-dom";
 
 const AboutLayout = () => {
     return (
-        <div className="flex min-h-screen bg-gray-50">
-
+        <div className="flex min-h-screen">
             {/* Sidebar */}
-            <aside className="w-72 bg-white border-r border-gray-100 p-8 hidden lg:block">
-                <h2 className="font-black text-xl mb-10 text-[#101828] tracking-tight">About Us</h2>
+            <aside className="w-80 bg-white border-r border-gray-100 p-8 hidden lg:block overflow-y-auto">
+                <div className="sticky top-24">
+                    <p className="text-blue-600 font-black text-xs tracking-[0.3em] uppercase mb-4">About Us</p>
+                    <h2 className="font-black text-2xl mb-10 text-[#101828] tracking-tight">Sai College</h2>
 
-                <nav className="space-y-4">
-                    <NavLink to="/about/history" className={({ isActive }) => `block py-2 px-3 rounded-lg transition-all font-bold ${isActive ? 'bg-[#101828] text-[#EAB308]' : 'hover:bg-gray-50 text-gray-600 hover:text-[#101828]'}`}>History & Milestones</NavLink>
-                    <NavLink to="/about/founders" className={({ isActive }) => `block py-2 px-3 rounded-lg transition-all font-bold ${isActive ? 'bg-[#101828] text-[#EAB308]' : 'hover:bg-gray-50 text-gray-600 hover:text-[#101828]'}`}>Founders</NavLink>
-                    <NavLink to="/about/vision-mission" className={({ isActive }) => `block py-2 px-3 rounded-lg transition-all font-bold ${isActive ? 'bg-[#101828] text-[#EAB308]' : 'hover:bg-gray-50 text-gray-600 hover:text-[#101828]'}`}>Vision & Mission</NavLink>
-                    <NavLink to="/about/chairman-message" className={({ isActive }) => `block py-2 px-3 rounded-lg transition-all font-bold ${isActive ? 'bg-[#101828] text-[#EAB308]' : 'hover:bg-gray-50 text-gray-600 hover:text-[#101828]'}`}>Chairman's Message</NavLink>
-                    <NavLink to="/about/principal-message" className={({ isActive }) => `block py-2 px-3 rounded-lg transition-all font-bold ${isActive ? 'bg-[#101828] text-[#EAB308]' : 'hover:bg-gray-50 text-gray-600 hover:text-[#101828]'}`}>Principal's Message</NavLink>
-                </nav>
+                    <nav className="space-y-3">
+                        {[
+                            { path: "/about/history", label: "History & Milestones" },
+                            { path: "/about/founders", label: "Founders" },
+                            { path: "/about/vision-mission", label: "Vision & Mission" },
+                            { path: "/about/chairman-message", label: "Chairman's Message" },
+                            { path: "/about/principal-message", label: "Principal's Message" },
+                        ].map((item) => (
+                            <NavLink
+                                key={item.path}
+                                to={item.path}
+                                className={({ isActive }) =>
+                                    `block py-3 px-4 rounded-xl transition-all font-bold text-sm ${isActive
+                                        ? "bg-[#101828] text-[#EAB308] shadow-lg shadow-blue-900/10"
+                                        : "hover:bg-gray-50 text-gray-500 hover:text-[#101828]"
+                                    }`
+                                }
+                            >
+                                {item.label}
+                            </NavLink>
+                        ))}
+                    </nav>
+                </div>
             </aside>
 
             {/* Content */}
-            <main className="flex-1 p-10">
-                <Outlet />
+            <main className="flex-1 p-6 lg:p-12">
+                <div className="max-w-5xl mx-auto">
+                    <Outlet />
+                </div>
             </main>
-
         </div>
     );
 };

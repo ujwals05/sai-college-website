@@ -1,32 +1,112 @@
 import { Link } from "react-router-dom";
+import useEmblaCarousel from "embla-carousel-react";
+import { useEffect, useCallback, useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+const heroImages = [
+    {
+        url: "https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&q=80&w=1500",
+        caption: "Excellence in Women's Education"
+    },
+    {
+        url: "https://images.unsplash.com/photo-152305085306e-88021f879ad5?auto=format&fit=crop&q=80&w=1500",
+        caption: "State-of-the-Art Campus Facilities"
+    },
+    {
+        url: "https://images.unsplash.com/photo-1523240795203-d684964f852e?auto=format&fit=crop&q=80&w=1500",
+        caption: "Empowering Future Leaders"
+    }
+];
 
 const AboutHome = () => {
+    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 30 });
+    const [selectedIndex, setSelectedIndex] = useState(0);
+
+    const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+    const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+
+    const onSelect = useCallback(() => {
+        if (!emblaApi) return;
+        setSelectedIndex(emblaApi.selectedScrollSnap());
+    }, [emblaApi]);
+
+    useEffect(() => {
+        if (!emblaApi) return;
+        emblaApi.on("select", onSelect);
+        onSelect();
+
+        const interval = setInterval(() => {
+            emblaApi.scrollNext();
+        }, 6000);
+
+        return () => clearInterval(interval);
+    }, [emblaApi, onSelect]);
+
     return (
         <div className="space-y-20 ">
 
             {/* Hero Section */}
-            <section className="relative h-[80vh] min-h-[600px] w-full overflow-hidden">
+            <section className="relative h-[80vh] min-h-[600px] w-full overflow-hidden rounded-[2.5rem]">
 
-                {/* Background Image */}
-                <img
-                    src="/about-hero.webp"
-                    alt="Sai College Campus"
-                    className="absolute inset-0 w-full h-full object-cover"
-                />
+                {/* Carousel Container */}
+                <div className="absolute inset-0" ref={emblaRef}>
+                    <div className="flex h-full">
+                        {heroImages.map((image, index) => (
+                            <div key={index} className="min-w-full h-full relative">
+                                <img
+                                    src={image.url}
+                                    alt={`About Hero ${index + 1}`}
+                                    className="w-full h-full object-cover"
+                                />
+                                {/* Overlay */}
+                                <div className="absolute inset-0 bg-[#101828]/60" />
+                            </div>
+                        ))}
+                    </div>
+                </div>
 
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-[#101828]/80" />
-
-                {/* Content */}
-                <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6 text-white">
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                        About Sai College for Women
+                {/* Content Overlay */}
+                <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6 text-white pointer-events-none">
+                    <h1 className="text-4xl md:text-5xl lg:text-7xl font-black mb-6 tracking-tight">
+                        About Sai College <br />
+                        <span className="text-[#EAB308]">for Women</span>
                     </h1>
 
-                    <p className="max-w-2xl text-[#EAB308] text-lg md:text-xl font-medium">
-                        Empowering women through quality education, leadership development,
-                        and values-driven academic excellence.
+                    <p className="max-w-2xl text-gray-200 text-lg md:text-xl font-bold uppercase tracking-widest">
+                        {heroImages[selectedIndex].caption}
                     </p>
+                </div>
+
+                {/* Carousel Controls */}
+                <div className="absolute bottom-10 right-10 z-20 hidden md:flex items-center gap-4">
+                    <div className="flex gap-2">
+                        {heroImages.map((_, index) => (
+                            <button
+                                key={index}
+                                onClick={() => emblaApi?.scrollTo(index)}
+                                className={`h-1.5 rounded-full transition-all duration-300 ${selectedIndex === index
+                                    ? "w-10 bg-blue-500"
+                                    : "w-4 bg-white/40 hover:bg-white/70"
+                                    }`}
+                            />
+                        ))}
+                    </div>
+
+                    <div className="flex gap-2 ml-4">
+                        <button
+                            onClick={scrollPrev}
+                            className="h-10 w-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/20 transition"
+                        >
+                            <ChevronLeft className="w-5 h-5" />
+                        </button>
+
+                        <button
+                            onClick={scrollNext}
+                            className="h-10 w-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-white/20 transition"
+                        >
+                            <ChevronRight className="w-5 h-5" />
+                        </button>
+                    </div>
                 </div>
 
             </section>
