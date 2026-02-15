@@ -1,16 +1,144 @@
-import { Search, Book, Monitor, Globe, Clock, ShieldCheck } from 'lucide-react';
+import { Search, Book, Monitor, Globe, Clock, ShieldCheck, Library as LibraryIcon, ChevronLeft, ChevronRight, CheckCircle2, Quote } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import useEmblaCarousel from "embla-carousel-react";
+import { useEffect, useCallback, useState } from "react";
+
+const heroImages = [
+    {
+        url: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&q=80&w=1500",
+        title: "Knowledge Sanctuary",
+        subtitle: "A World of Wisdom Awaiting Your Discovery"
+    },
+    {
+        url: "https://images.unsplash.com/photo-1541339907198-e08756ebafe3?auto=format&fit=crop&q=80&w=1500",
+        title: "Digital Archives",
+        subtitle: "Instant Access to Global Research Databases"
+    },
+    {
+        url: "https://images.unsplash.com/photo-1507730129329-da430e372138?auto=format&fit=crop&q=80&w=1500",
+        title: "Reference Hall",
+        subtitle: "Dedicated Spaces for Deep Focused Study"
+    },
+    {
+        url: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=1500",
+        title: "Reading Zone",
+        subtitle: "Comfortable Environment for Academic Growth"
+    },
+    {
+        url: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&q=80&w=1500",
+        title: "Resource Centre",
+        subtitle: "Supporting Every Learner's Academic Journey"
+    }
+];
 
 const Library = () => {
+    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, duration: 40 });
+    const [selectedIndex, setSelectedIndex] = useState(0);
+
+    const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+    const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+
+    const onSelect = useCallback(() => {
+        if (!emblaApi) return;
+        setSelectedIndex(emblaApi.selectedScrollSnap());
+    }, [emblaApi]);
+
+    useEffect(() => {
+        if (!emblaApi) return;
+        emblaApi.on("select", onSelect);
+        onSelect();
+
+        const interval = setInterval(() => {
+            emblaApi.scrollNext();
+        }, 6000);
+
+        return () => clearInterval(interval);
+    }, [emblaApi, onSelect]);
+
+    const facilities = [
+        {
+            title: 'Digital Repository',
+            category: 'E-Resources',
+            desc: 'Our Information Centre provides seamless access to prestigious international research databases including IEEE, JSTOR, and the N-LIST program. Students can access millions of journals and articles for their research work.',
+            icon: Globe,
+            image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=1200",
+            features: ['N-LIST Access', 'IEEE/JSTOR Journals', 'Remote Access Hub', 'E-Thesis Support']
+        },
+        {
+            title: 'Reference Section',
+            category: 'Physical Collection',
+            desc: 'The heart of our library houses a comprehensive collection of textbooks, reference guides, rare manuscripts, and encyclopedias across diverse academic disciplines, from Humanities to Advanced Computing.',
+            icon: Book,
+            image: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&q=80&w=1200",
+            features: ['25,000+ Volumes', 'Research Journals', 'Archival Material', 'Subject Encyclopedias']
+        },
+        {
+            title: 'E-Learning Zone',
+            category: 'Technology',
+            desc: 'Equipped with high-performance systems and dedicated high-speed internet, this zone is designed for intensive research, project documentation, and accessing online certification courses.',
+            icon: Monitor,
+            image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=1200",
+            features: ['Workstation Access', 'Suraj (Digital Repository)', 'Video Lecture Library', 'Printing Facility']
+        }
+    ];
+
     return (
-        <div className="flex flex-col">
-            {/* Header */}
-            <section className="bg-[#101828] text-white py-24 px-4 overflow-hidden relative">
-                <div className="container mx-auto text-center space-y-6 relative z-10">
-                    <h1 className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight">Library & Information Centre</h1>
-                    <p className="text-xl text-[#EAB308] max-w-2xl mx-auto font-bold uppercase tracking-widest text-sm">
-                        Your gateway to a world of knowledge. Explore our extensive collection of physical books and digital repositories.
+        <div className="flex flex-col space-y-24 pb-24 bg-white">
+
+            {/* Hero Carousel */}
+            <section className="relative h-screen w-full overflow-hidden">
+                <div className="absolute inset-0" ref={emblaRef}>
+                    <div className="flex h-full">
+                        {heroImages.map((slide, index) => (
+                            <div key={index} className="min-w-full h-full relative">
+                                <img
+                                    src={slide.url}
+                                    alt={slide.title}
+                                    className="w-full h-full object-cover"
+                                />
+                                <div className="absolute inset-0 bg-[#101828]/60" />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Content Overlay */}
+                <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6 text-white pointer-events-none">
+                    <p className="text-[#EAB308] font-black text-xs md:text-sm tracking-[0.4em] uppercase mb-6 animate-in slide-in-from-bottom duration-700">
+                        Information Centre
                     </p>
+                    <h1 className="text-4xl md:text-6xl lg:text-8xl font-black mb-8 leading-tight tracking-tight">
+                        {heroImages[selectedIndex].title}
+                    </h1>
+                    <div className="max-w-xl text-gray-200 text-lg md:text-xl font-bold uppercase tracking-[0.2em] opacity-80 flex items-center justify-center gap-4">
+                        <div className="h-px w-8 bg-[#EAB308]" />
+                        {heroImages[selectedIndex].subtitle}
+                        <div className="h-px w-8 bg-[#EAB308]" />
+                    </div>
+                </div>
+
+                {/* Carousel Controls */}
+                <div className="absolute bottom-12 left-1/2 -translate-x-1/2 lg:left-auto lg:right-20 lg:translate-x-0 z-20 flex items-center gap-6">
+                    <div className="flex gap-2.5">
+                        {heroImages.map((_, index) => (
+                            <button
+                                key={index}
+                                onClick={() => emblaApi?.scrollTo(index)}
+                                className={`h-1.5 rounded-full transition-all duration-300 ${selectedIndex === index
+                                    ? "w-12 bg-white"
+                                    : "w-4 bg-white/30 hover:bg-white/50"
+                                    }`}
+                            />
+                        ))}
+                    </div>
+                    <div className="hidden lg:flex gap-3 ml-4">
+                        <button onClick={scrollPrev} className="h-12 w-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition group">
+                            <ChevronLeft className="w-5 h-5 text-white/70 group-hover:text-white" />
+                        </button>
+                        <button onClick={scrollNext} className="h-12 w-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition group">
+                            <ChevronRight className="w-5 h-5 text-white/70 group-hover:text-white" />
+                        </button>
+                    </div>
                 </div>
             </section>
 
@@ -52,7 +180,7 @@ const Library = () => {
                             { title: 'E-Learning Zone', desc: 'High-end computer systems for browsing, research, and technical project work.', icon: Monitor },
                             { title: 'Current Affairs', desc: 'Dedicated space for latest newspapers, monthly magazines, and competitive exam guides.', icon: Clock },
                             { title: 'Borrowing Services', desc: 'Seamless automated system for issuing and returning books with student IDs.', icon: ShieldCheck },
-                            { title: 'Reading Halls', desc: 'Spacious, well-lit reading halls designed for deep focus and group study sessions.', icon: Library }
+                            { title: 'Reading Halls', desc: 'Spacious, well-lit reading halls designed for deep focus and group study sessions.', icon: LibraryIcon }
                         ].map((item, i) => (
                             <div key={i} className="p-10 rounded-3xl border border-slate-100 bg-white space-y-6 hover:border-[#EAB308] hover:shadow-xl transition-all group">
                                 <div className="h-14 w-14 bg-yellow-50 text-[#EAB308] rounded-2xl flex items-center justify-center shadow-sm group-hover:bg-[#101828] group-hover:text-white transition-all">
@@ -106,6 +234,7 @@ const Library = () => {
                     </div>
                 </div>
             </section>
+
         </div>
     );
 };
